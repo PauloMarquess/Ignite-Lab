@@ -9,13 +9,19 @@ function App() {
       }
     }
   `;
-  const { data } = useQuery(GET_LESSONS_QUERY);
-  console.log(data);
+  const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
+
+  interface Lesson {
+    id: string;
+    title: string;
+  }
 
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-violet-500">Hello World</h1>
-    </div>
+    <ul>
+      {data?.lessons.map((lesson) => (
+        <li key={lesson.id}>{lesson.title}</li>
+      ))}
+    </ul>
   );
 }
 
