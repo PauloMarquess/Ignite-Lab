@@ -9,7 +9,15 @@ const Event = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex flex-1">
-        {slug ? <Video /> : <div className="flex-1" />}
+        {slug ? (
+          <Video lessonSlug={slug} />
+        ) : (
+          <div className="flex-1">
+            <h1 className="flex items-center justify-center h-full">
+              Clique em algum video da direita{" "}
+            </h1>
+          </div>
+        )}
         <SideBar />
       </main>
     </div>
