@@ -16,6 +16,7 @@ const Lesson = (props: LessonProps) => {
     "EEEE ' • 'd ' de 'MMMM ' • 'k 'h'mm ",
     { locale: ptBR }
   );
+
   return (
     <a href="#">
       <span className="text-gray-300">{availableDateFormatted}</span>
